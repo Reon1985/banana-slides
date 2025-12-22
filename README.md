@@ -183,11 +183,24 @@ OPENAI_API_BASE=https://api.openai.com/v1
 docker compose up -d
 ```
 
+> [!WARNING]
+> 如遇网络问题，可在 `.env` 文件中取消镜像源配置的注释：
+> ```env
+> # 在 .env 文件中取消以下注释即可使用国内镜像源
+> DOCKER_REGISTRY=docker.1ms.run/
+> GHCR_REGISTRY=ghcr.nju.edu.cn/
+> APT_MIRROR=mirrors.aliyun.com
+> PYPI_INDEX_URL=https://mirrors.cloud.tencent.com/pypi/simple
+> NPM_REGISTRY=https://registry.npmmirror.com/
+> ```
+
+</blockquote>
+
+
 3. **访问应用**
 
 - 前端：http://localhost:3000
 - 后端 API：http://localhost:5000
-
 
 4. **查看日志**
 
