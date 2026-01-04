@@ -469,7 +469,7 @@ class InpaintProviderRegistry:
     """
     
     # 预定义的元素类型分组
-    TEXT_TYPES = {'text', 'title', 'paragraph', 'header', 'footer'}
+    TEXT_TYPES = {'text', 'title', 'paragraph', 'header', 'footer', 'list'}
     TABLE_TYPES = {'table', 'table_cell'}
     IMAGE_TYPES = {'image', 'figure', 'chart', 'diagram'}
     
