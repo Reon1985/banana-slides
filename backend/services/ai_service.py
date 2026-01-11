@@ -283,7 +283,7 @@ class AIService:
             List of outline items (may contain parts with pages or direct pages)
         """
         outline_prompt = get_outline_generation_prompt(project_context, language)
-        outline = self.generate_json(outline_prompt, thinking_budget=1000)
+        outline = self.generate_json(outline_prompt, thinking_budget=0)
         return outline
     
     def parse_outline_text(self, project_context: ProjectContext, language: str = None) -> List[Dict]:
@@ -345,7 +345,7 @@ class AIService:
             language=language
         )
         
-        response_text = self.text_provider.generate_text(desc_prompt, thinking_budget=1000)
+        response_text = self.text_provider.generate_text(desc_prompt, thinking_budget=0)
         
         return dedent(response_text)
     
@@ -528,7 +528,7 @@ class AIService:
             List of outline items (may contain parts with pages or direct pages)
         """
         parse_prompt = get_description_to_outline_prompt(project_context, language)
-        outline = self.generate_json(parse_prompt, thinking_budget=1000)
+        outline = self.generate_json(parse_prompt, thinking_budget=0)
         return outline
     
     def parse_description_to_page_descriptions(self, project_context: ProjectContext, 
@@ -545,7 +545,7 @@ class AIService:
             List of page descriptions (strings), one for each page in the outline
         """
         split_prompt = get_description_split_prompt(project_context, outline, language)
-        descriptions = self.generate_json(split_prompt, thinking_budget=1000)
+        descriptions = self.generate_json(split_prompt, thinking_budget=0)
         
         # 确保返回的是字符串列表
         if isinstance(descriptions, list):
@@ -576,7 +576,7 @@ class AIService:
             previous_requirements=previous_requirements,
             language=language
         )
-        outline = self.generate_json(refinement_prompt, thinking_budget=1000)
+        outline = self.generate_json(refinement_prompt, thinking_budget=0)
         return outline
     
     def refine_descriptions(self, current_descriptions: List[Dict], user_requirement: str,
@@ -605,7 +605,7 @@ class AIService:
             previous_requirements=previous_requirements,
             language=language
         )
-        descriptions = self.generate_json(refinement_prompt, thinking_budget=1000)
+        descriptions = self.generate_json(refinement_prompt, thinking_budget=0)
         
         # 确保返回的是字符串列表
         if isinstance(descriptions, list):
