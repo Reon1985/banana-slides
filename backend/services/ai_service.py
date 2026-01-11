@@ -157,7 +157,7 @@ class AIService:
         retry=retry_if_exception_type((json.JSONDecodeError, ValueError)),
         reraise=True
     )
-    def generate_json(self, prompt: str, thinking_budget: int = 1000) -> Union[Dict, List]:
+    def generate_json(self, prompt: str, thinking_budget: int = 0) -> Union[Dict, List]:
         """
         生成并解析JSON，如果解析失败则重新生成
         
@@ -188,7 +188,7 @@ class AIService:
         retry=retry_if_exception_type((json.JSONDecodeError, ValueError)),
         reraise=True
     )
-    def generate_json_with_image(self, prompt: str, image_path: str, thinking_budget: int = 1000) -> Union[Dict, List]:
+    def generate_json_with_image(self, prompt: str, image_path: str, thinking_budget: int = 0) -> Union[Dict, List]:
         """
         带图片输入的JSON生成，如果解析失败则重新生成（最多重试3次）
         
