@@ -24,7 +24,7 @@ class GenAIImageProvider(ImageProvider):
         self,
         api_key: str = None,
         api_base: str = None,
-        model: str = "gemini-3-pro-image-preview",
+        model: str = "gemini-2.0-flash-exp",
         vertexai: bool = False,
         project_id: str = None,
         location: str = None
