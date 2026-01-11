@@ -298,7 +298,7 @@ class AIService:
             List of outline items (may contain parts with pages or direct pages)
         """
         parse_prompt = get_outline_parsing_prompt(project_context, language)
-        outline = self.generate_json(parse_prompt, thinking_budget=1000)
+        outline = self.generate_json(parse_prompt)
         return outline
     
     def flatten_outline(self, outline: List[Dict]) -> List[Dict]:
